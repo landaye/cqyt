@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      border-radius: 5px;
+      padding: 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .login-container h1 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: 92%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .login-form input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: #ffffff;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .login-form input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .password-toggle {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .password-toggle img {
+      width: 20px;
+      height: auto;
+    }
+
+    #save-password {
+      background: linear-gradient(to right, #ff0000, #00ffa6);
+      /* Standard syntax */
+      background-clip: text;
+      /* Safari, Chrome, and other WebKit-based browsers */
+      -webkit-background-clip: text;
+      /* Firefox */
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <h1 id="save-password">Save Password</h1>
+    <form class="login-form">
+      <input type="text" id="username" name="username" placeholder="学号" required>
+      <div class="password-container">
+        <input type="password" id="password_jw" name="password" placeholder="教务系统密码">
+        <div class="password-toggle" id="jwxt">
+          <img src="./image/close.png" alt="显示密码">
+        </div>
+      </div>
+      <div class="password-container">
+        <input type="password" id="password_rz" name="password" placeholder="身份认证密码">
+        <div class="password-toggle" id="sfrz">
+          <img src="./image/close.png" alt="显示密码">
+        </div>
+      </div>
+      <input type="submit" id="submit_l" value="Submit">
+    </form>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

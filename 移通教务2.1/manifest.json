@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "移通教务",
+  "version": "2.1",
+  "description": "移通教务",
+  "icons": {
+    "16": "image/yt16.png",
+    "48": "image/yt48.png",
+    "128": "image/yt128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "image/yt16.png",
+      "48": "image/yt48.png",
+      "128": "image/yt128.png"
+    },
+    "default_title": "CQYT",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "js/content-script.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .box {
+            width: 180px;
+            height: 350px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            margin-top: 1%;
+            margin-left: 15%;
+        }
+
+        .toggle-checkbox {
+            display: none;
+        }
+
+        .toggle-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-label:before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 26px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-checkbox:checked+.toggle-label {
+            background-color: #4CAF50;
+        }
+
+        .toggle-checkbox:checked+.toggle-label:before {
+            transform: translateX(30px);
+        }
+
+
+
+        .auto-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            margin-top: 1%;
+            margin-left: 15%;
+        }
+
+        .auto-checkbox {
+            display: none;
+        }
+
+        .auto-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .auto-label:before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 26px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .auto-checkbox:checked+.auto-label {
+            background-color: #4CAF50;
+        }
+
+        .auto-checkbox:checked+.auto-label:before {
+            transform: translateX(30px);
+        }
+
+
+        .my-button {
+            margin-left: 5%;
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .my-button:hover {
+            background-color: #009999;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        h1 {
+            color: rgb(252, 251, 251);
+        }
+
+        h2 {
+            align-items: center;
+        }
+
+        h4 {
+            padding: 0;
+            margin: 0;
+            color: red;
+        }
+
+        h3 {
+            margin-left: 5%;
+            color: #009999;
+            text-shadow: 2px 2px 4px rgba(161, 156, 156, 0.5);
+        }
+
+        /* #myInput {
+            width: 20px;
+        } */
+
+
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #myInput {
+            padding: 5px;
+            font-size: 5px;
+            width: 30px;
+            border: none;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        #minusButton {
+            margin-left: 10%;
+        }
+
+        button {
+            padding: 8px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 10%;
+            /* 添加此行以设置按钮宽度为100% */
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        button span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button:hover {
+            background-color: #009999;
+        }
+
+        button:active {
+            background-color: #009999;
+        }
+
+        .imgs {
+            display: flex;
+            align-items: center;
+            margin-top: 5%;
+            cursor: pointer;
+        }
+
+        #login {
+            width: 18px;
+            height: 18px;
+            margin-left: 18%;
+        }
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fbf6f6;
+        }
+
+        .imgs:hover span {
+            color: #e2dada;
+        }
+
+        #titles {
+            background-color: #009999;
+            width: 230px;
+            margin-left: -5%;
+            margin-top: -5%;
+        }
+
+        #sy {
+            cursor: pointer;
+        }
+
+        #sy:hover {
+            color: #f1eded;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            color: rgb(255, 255, 255);
+            background-color: #69cece;
+            padding: 2px;
+            font-size: 2px;
+            position: absolute;
+            top: 100%;
+            left: 10%;
+            width: 90%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+
+        .stereo-text {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="titles">
+            <div class="container" style="margin-left: 3%;">
+                <h1 class="tooltip" data-tooltip="点击可进入首页" id="sy">重庆移通</h1>
+                <div class="imgs" id="sy">
+                    <img id="login" src="./image/login.png">
+                    <span class="stereo-text">User</span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h3>外网VPN:</h3>
+            <a href="#" class="my-button" id="jump_1">点击跳转</a>
+        </div>
+        <div class="container">
+            <h3>内网VPN:</h3>
+            <a href="#" class="my-button" id="jump_2">点击跳转</a>
+        </div>
+        <div class="container">
+            <h3>速度ms:</h3>
+            <button id="minusButton"><span>-</span></button>
+            <input type="text" id="myInput" value="1000">
+            <button id="plusButton"><span>+</span></button>
+        </div>
+        <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网卡???速度往上调调</h4>
+        <div class="container">
+            <h3>评教2.0:</h3>
+            <div class="auto-switch">
+                <input type="checkbox" id="autoSwitch" class="auto-checkbox">
+                <label for="autoSwitch" class="auto-label"></label>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>评教1.0:</h3>
+            <div class="toggle-switch">
+                <input type="checkbox" id="toggleSwitch" class="toggle-checkbox">
+                <label for="toggleSwitch" class="toggle-label"></label>
+            </div>
+        </div>
+        <h4>&nbsp;注意!!评教1.0需自己保存或提交</h4>
+
+    </div>
+    <script src="js/popup.js"></script>
+</body>
+
+</html>
